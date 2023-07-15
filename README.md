@@ -1,6 +1,6 @@
 ## Stock Market Dashboard
 
-https://stock-market-dashboard-trail2.vercel.app/
+https://stock-market-dashboard-trail3.vercel.app/
 
 A web-based dashboard for viewing and managing stock prices based on company symbols.
 
