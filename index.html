@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima&display=swap" rel="stylesheet">
+<!-- <canvas id="myChart"></canvas> -->
+</head>
+
+<body>
+    <div class="root-body">
+        <div class="bar-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="bar-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="left-side-bar">
+            
+            <div class="nav-top">
+                <div class="logo">
+                    <img id="logo-img"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS47gpVHovs4b6jy4rjCm4rnny-Gkpg9aapTQ&usqp=CAU"
+                        alt="logo">
+                </div>
+                <nav class="nav-bar">
+                    <div>
+                        <ul class="user-selection-nav-bar">
+                            <li >
+                                <a href="#dashBoard.html" class="ui-selection">
+                                    <i class="fa-sharp fa-solid fa-table-columns"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#news">
+                                    <i class="fa-sharp fa-solid fa-newspaper"></i>
+                                    News</a>
+                            </li>
+                            <li>
+                                <a href="#inflation">
+                                    <i class="fa-sharp fa-solid fa-arrow-trend-up"></i>
+                                    Inflation</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="user-selection-nav-bar" id="userClass">
+                            <li >
+                                <a  href="#user">
+                                    <i class="fa-regular fa-user"></i>
+                                    User
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            
+        </div>
+
+        <div class="middle-page-data">                        
+            <div class="table-of-data">
+                <!-- slection of trade type -->
+                <div class="trade-type-selection">
+                    <button class="trade-selection">INTRADAY</button>
+                    <button class="trade-selection">DAILY</button>
+                    <button class="trade-selection">WEEKLY</button>
+                    <button class="trade-selection">MONTHLY</button>
+                </div>
+                <!-- Table of Content -->
+                <div class="graph-table">
+                    <p class="instruction">Please choose a required <span class="highlights">STOCKS</span> by using the <span class="highlights">SEARCH</span> option and add it to your <span class="highlights">Watch List BELOW</span>. Use the <span class="highlights">ABOVE</span> buttons to select the <span class="highlights">TYPE OF TRADE</span> and see the details.</p>
+                    <div id="table-data">
+                        <table id="table-main">         
+                            <thead class="table-heading-main">
+                                
+                            </thead>
+                            <tbody class="table-data-filling-in-script">
+                                
+                            </tbody> 
+                        </table>
+                    </div>
+                    <div class="graph">
+                        <canvas id="stockChart"></canvas>
+                        
+                    </div>
+                </div>
+                
+                <div>
+
+                </div>
+            </div>                
+            
+            <div class="data-graph-splitting">
+                <div class="random-data-main-page">
+                   
+                </div>
+            </div>
+
+            <!-- <div id="balanceSheet">
+                <div>
+                    
+                    <table class="table-balanceSheet">
+                        <thead>
+                            <tr class="table-heading">
+                                <th>Date</th>
+                                <th>Value</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="bsheet">
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+
+            <div id="newsFeed">
+                <div id="newsContainer">
+                                        
+                </div>
+            </div>
+
+            <div id="inflation">
+                <table class="table-balanceSheet inflTable">
+                    <thead>
+                        <tr class="table-heading">
+                            <th>Date</th>
+                            <th>Value</th>                            
+                        </tr>
+                    </thead>
+                    <tbody id="inflationTbody">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="user">
+                <div id="userArea">
+                    <div class="containerss">
+                        <div class="forms">
+                            <form id="signup-form">
+                                <h2>Sign up</h2>
+                                <input type="text" placeholder="Username" required>
+                                <input type="email" placeholder="Email" required>
+                                <input type="password" placeholder="Password" required>
+                                <button type="submit">Sign up</button>
+                            </form>
+                            <form id="signin-form">  
+                                <h2>Sign in</h2>
+                                <input type="email" placeholder="Email" required>
+                                <input type="password" placeholder="Password" required>
+                                <button type="submit">Sign in</button>
+                            </form>
+                        </div>
+                        <div class="toggle">
+                            <button id="toggle-btn">Already have an account? Sign In!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="rights-side-data">
+            <div class="searching-option">
+                <div id="searching-section">
+                    <input id="search-bar" type="text" name="input" placeholder="Search">
+                    <span>
+                        <button >
+                            <i id="fetchStart" class="fa-brands fa-searchengin"></i>
+                        </button>
+                        <button >
+                            <i id="search-close-button" class="fa-solid fa-xmark"></i>
+                        </button>
+                    </span>
+
+                </div>
+                <div class="searching-option-li active">
+
+
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
